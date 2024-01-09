@@ -36,14 +36,14 @@ $hotels = [
     'distance_to_center' => 50
   ],
 ];
-foreach ($hotels as $hotel) {
-  echo "<h2>{$hotel['name']}</h2>";
-  echo "<p>{$hotel['description']}</p>";
-  echo "<p>Parcheggio disponibile: " . ($hotel['parking'] ? 'Sì' : 'No') . "</p>";
-  echo "<p>Voto: {$hotel['vote']}</p>";
-  echo "<p>Distanza dal centro: {$hotel['distance_to_center']} km</p>";
-  echo "<hr>";
-}
+// foreach ($hotels as $hotel) {
+//   echo "<h2>{$hotel['name']}</h2>";
+//   echo "<p>{$hotel['description']}</p>";
+//   echo "<p>Parcheggio disponibile: " . ($hotel['parking'] ? 'Sì' : 'No') . "</p>";
+//   echo "<p>Voto: {$hotel['vote']}</p>";
+//   echo "<p>Distanza dal centro: {$hotel['distance_to_center']} km</p>";
+//   echo "<hr>";
+// }
 
 ?>
 
@@ -60,9 +60,9 @@ foreach ($hotels as $hotel) {
   <!-- /BOOTSTRAP -->
 </head>
 
-<body class="">
-  <!-- <div class="container mt-5">
-    <table class="table ">
+<body class="bg-primary">
+  <div class="container mt-5">
+    <table class="table">
       <thead>
         <tr>
           <th>Name</th>
@@ -73,29 +73,18 @@ foreach ($hotels as $hotel) {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>aaa</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>aaaa</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-          <td>aaaa</td>
-        </tr>
+        <?php foreach ($hotels as $hotel) : ?>
+          <tr>
+            <td><?= $hotel['name'] ?></td>
+            <td><?= $hotel['description'] ?></td>
+            <td><?= $hotel['parking'] ? 'Yes' : 'No' ?></td>
+            <td><?= $hotel['vote'] ?></td>
+            <td><?= $hotel['distance_to_center'] ?></td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
-  </div> -->
+  </div>
 </body>
 
 </html>
